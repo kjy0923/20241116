@@ -1,0 +1,23 @@
+#include <string>
+#include <vector>
+#include <algorithm>
+
+using namespace std;
+
+int solution(string my_string, string is_prefix) {
+int result;
+    vector<string> prefix;
+    
+    for(int i=1;i<=my_string.size();i++){
+        prefix.push_back(my_string.substr(0,i));
+    }
+    
+    if(find(prefix.begin(),prefix.end(),is_prefix)!=prefix.end()){
+        result=1;
+    }
+    else{
+        result=0;
+    }
+    
+    return result;
+}
